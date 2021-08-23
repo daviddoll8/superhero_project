@@ -19,4 +19,4 @@ def detail(request, superhero_id):
     superhero = Superhero.objects.get(pk=superhero_id)
   except Superhero.DoesNotExist:
     raise Http404("Superhero does not exist")
-  return render(request, 'superheroes/detail.html')
+  return render(request, 'superheroes/detail.html', {'superhero': superhero})
